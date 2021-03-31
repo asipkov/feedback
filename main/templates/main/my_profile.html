@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load ratings %}
+
+{% block title %}Профиль пользователя {{ user.username }}{% endblock %}
+{% block content %}
+    <center>
+        <div class="col-4 offset-1">
+
+            <html>
+            <h5> {{ user.first_name }} {{ user.last_name }}</h5>
+            <hr>
+            <p><img src="{{ user.userprofile.avatar.url }}"></p>
+            <p> Группа: {{ user.groups.get }}</p>
+            {% ratings user.userprofile %}
+            {% with comments.count as total_comments %}
+                <hr>
+                <h5>
+                    Отзывы:
+                </h5>
+                <br>
+            {% endwith %}
+            {% for comment in comments %}
+                <div class="comment">
+                    <p class="info">
+                        № {{ forloop.counter }} от <b>{{ comment.name }}</b>
+                        {{ comment.created }}
+                    </p>
+                    <div class="alert alert-success">
+                        {{ comment.body|linebreaks }}
+                    </div>
+                </div>
+            {% empty %}
+                <p>Пока нет :(</p>
+            {% endfor %}
+
+    </center>
+    </div>
+    <br>
+    <br>
+
+{% endblock %}

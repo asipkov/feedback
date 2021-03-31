@@ -1,0 +1,46 @@
+#footer {
+    position: fixed; /* Фиксированное положение */
+    left: 0;
+    bottom: 0; /* Левый нижний угол */
+    padding: 10px; /* Поля вокруг текста */
+    background: #393; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    width: 100%; /* Ширина слоя */
+}
+
+#circle {
+    width: 30px;
+    height: 30px;
+    display: block;
+    border-radius: 50px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -khtml-border-radius: 50px;
+    font-size: 20px;
+    color: #fff;
+    line-height: 100px;
+    text-align: center;
+    background: #393
+
+}
+
+#P.fig {
+    text-align: right;
+}
+
+.colortext {
+    color: #c33;
+}
+
+.outer {
+    position: relative;
+    height: 5em;
+
+}
+
+.inner {
+    position: absolute;
+    top: 25%;
+    margin-top: -0.625em;
+
+}

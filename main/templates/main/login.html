@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'main/css/tabl_css.css' %}">
+{% block title %}Авторизация{% endblock %}
+
+{% block content %}
+
+    <div class="col-md-6 offset-md-3">
+        <h3 class="text-center">Войдите в систему</h3>
+        <hr>
+
+        <form action="" method="POST">
+            <table>
+
+                {{ form.as_table }}
+                {% csrf_token %}
+
+            </table>
+            <br>
+            <center><input type="submit" class="btn btn-success" value="Войти"></center>
+        </form>
+
+    </div>
+
+{% endblock %}

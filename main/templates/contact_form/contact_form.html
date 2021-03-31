@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Форма для связи с управляющим{% endblock %}
+
+{% block content %}
+        <div class="col-md-6 offset-md-3">
+            <h3 class="text-center">Форма обратной связи</h3>
+            <hr>
+                <form action="" method="POST">
+                    <table>
+                    {{ form.as_table }}
+                    {% csrf_token %}
+            </table>
+                    <center><input type="submit" class="btn btn-success" value="Отправить"></center>
+            </form>
+            <hr>
+
+        </div>
+
+{% endblock %}

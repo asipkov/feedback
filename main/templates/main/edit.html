@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Изменить профиль{% endblock %}
+{% block content %}
+    <div class="col-md-6 offset-md-3">
+        <h3 class="text-center">Изменить профиль</h3>
+        <hr>
+
+        <form action="" method="POST" enctype="multipart/form-data">
+            <table>
+                {{ form.as_table }}
+                {{ form2.as_table }}
+                {% csrf_token %}
+            </table>
+            <br>
+            <center><input type="submit" class="btn btn-success" value="Сохранить"></center>
+        </form>
+
+    </div>
+{% endblock %}
+
+
+
+

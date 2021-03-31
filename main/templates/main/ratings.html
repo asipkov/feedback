@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}Рейтинг работников{% endblock %}
+
+{% block content %}
+
+
+    <center>
+        <div class="col-4 offset-1">
+            <center><h3>Рейтинг лучших</h3></center>
+            <hr>
+            {% for user in result_raiting %}
+                {% if user.groups.all.0.name == 'worker' %}
+
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+
+                    <div class="row">
+
+                    <div class="col-2 offset-1" style="color: #393">
+                        <div id="circle"><h4>{{ forloop.counter }}</h4></div>
+
+                    </div>
+
+                    <div class="col-8 ">
+                    <big><a href="{% url 'profile' user_id=user.id %} "
+                            style="color: #000">{{ user.first_name }} {{ user.last_name }}</a></big>
+
+                {% endif %}
+            </div>
+            </div>
+            </div>
+            {% endfor %}
+
+        </div>
+
+
+
+{% endblock %}

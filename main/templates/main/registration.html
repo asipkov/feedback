@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Регистрация{% endblock %}
+
+{% block content %}
+
+        <div class="col-md-6 offset-md-3">
+            <h3 class="text-center">Регистрация нового пользователя</h3>
+            <hr>
+                <form action="" method="POST" enctype="multipart/form-data">
+                    <table>
+                    {{ form.as_table }}
+                    {% csrf_token %}
+            </table>
+            <br>
+            <center><input type="submit" class="btn btn-success" value="Зарегистрироваться"></center>
+            </form>
+        </div>
+    </div>
+{% endblock %}
